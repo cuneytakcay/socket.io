@@ -8,14 +8,14 @@ const PORT = process.env.PORT || 3000
 app.use(express.static('public'))
 
 io.on('connection', (socket) => {
-	console.log('A new user connected')
+	console.log('A new user connected', socket.id)
 
 	socket.on('disconnect', () => {
 		console.log('User disconnected')
 	})
 
-	socket.on('chat message', msg => {
-		io.emit('chat message', msg)
+	socket.on('chat', data => {
+		io.sockets.emit('chat', data)
 	})
 })
 
