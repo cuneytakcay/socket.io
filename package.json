@@ -1,0 +1,22 @@
+{
+  "name": "socket-chat",
+  "version": "1.0.0",
+  "description": "my first socket.io app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuneytakcay/socket.io.git"
+  },
+  "author": "Cuneyt Akcay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuneytakcay/socket.io/issues"
+  },
+  "homepage": "https://github.com/cuneytakcay/socket.io#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
