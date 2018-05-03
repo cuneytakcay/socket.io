@@ -1,5 +1,13 @@
 $(() => {
   const socket = io()
+
+  $('#msg').on('keypress', () => {
+  	socket.emit('typing', $('#nickname').val())
+  })
+
+  socket.on('typing', data => {
+  	$('#feedback').html(`${data} is typing...`)
+  })
   
   $('#send').on('click', () => {
     socket.emit('chat', {
@@ -7,11 +15,11 @@ $(() => {
     	nickname: $('#nickname').val(),
     })
     $('#msg').val('')
-    $('#nickname').val('')
     return false
   })
 
   socket.on('chat', data => {
+  	$('#feedback').html('')
   	$('#messages').append($('<li>').html(`<strong>${data.nickname}:</strong> ${data.msg}`))
   })
 })
